@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 // rockPaperScissors
 // Basic
 // 세 판의 가위바위보를 할 동안 낼 수 있는 모든 경우의 수를 return하는 함수를 작성하세요.
@@ -15,7 +15,7 @@
 // rockPaperScissors(5); // => [['rock', 'rock', 'rock', 'rock', 'rock'], etc...]
 
 const rockPaperScissors = function () {
-  let rps = ["rock", "scissors", "paper"];
+  let rps = ['rock', 'scissors', 'paper'];
   let result = [];
 
   for (let i = 0; i < rps.length; i++) {
@@ -35,7 +35,7 @@ const rockPaperScissors = function (rounds) {
   rounds = rounds || 3;
   var outcomes = [];
 
-  var plays = ["rock", "paper", "scissors"];
+  var plays = ['rock', 'paper', 'scissors'];
 
   var combos = function (roundsToGo, playedSoFar) {
     if (roundsToGo === 0) {

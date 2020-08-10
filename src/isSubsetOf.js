@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 //isSubsetOf
 // 특정 배열이 매개변수로 전달되는 배열의 부분집합인지를 판단하는 메소드를 만드세요. 비교 대상인 두 배열 모두 문자열로 이루어졌다고 가정합니다.
@@ -22,8 +22,8 @@ Array.prototype.isSubsetOf = function (array) {
   return true;
 };
 
-let a = ["commit", "push"];
-a.isSubsetOf(["commit", "rebase", "push", "blame"]);
+let a = ['commit', 'push'];
+a.isSubsetOf(['commit', 'rebase', 'push', 'blame']);
 
-let b = ["merge", "reset", "reset"];
-b.isSubsetOf(["reset", "merge", "add", "commit"]);
+let b = ['merge', 'reset', 'reset'];
+b.isSubsetOf(['reset', 'merge', 'add', 'commit']);

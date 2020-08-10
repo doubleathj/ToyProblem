@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // nthFibonacci
 // 피보나치 수는 첫째 및 둘째 항이 1입니다. 그 뒤의 모든 항은 바로 앞 두 항의 합인 수의 나열입니다.
