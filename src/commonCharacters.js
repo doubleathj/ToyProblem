@@ -23,4 +23,4 @@ const commonCharacters = function (string1, string2) {
   return result; //일치하는 것 result 에 넣어서 반환
 };
 
-console.log(commonCharacters('acexivou', 'aegihobu'));
+console.log(commonCharacters('all boys love fudge', 'boys all love fudge'));
