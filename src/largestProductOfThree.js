@@ -16,6 +16,7 @@ const largestProductOfThree = (array) => {
   for (let i = 0; i < 3; i++) {
     if (sorted[i] < 0) {
       //곱한 값이 음수이면 절대값을 결과에 곱한다.
+      //Math.abs() === 절대값으로 반환한다.
       result = result * Math.abs(sorted[i]);
     } else {
       //곱한 값이 양수일 때는 그냥 곱한다.
