@@ -7,7 +7,9 @@
 
 // 순환객체 레퍼런스 : https://riptutorial.com/javascript/example/14476/cyclic-object-values
 
+//reference code
 const deepEquals = function (apple, orange) {
+  debugger;
   if (apple === orange) return true;
   if ((apple && !orange) || (!apple && orange)) return false;
   if (!(apple instanceof Object) || !(orange instanceof Object)) return false;
