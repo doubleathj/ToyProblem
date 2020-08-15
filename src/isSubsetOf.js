@@ -12,14 +12,32 @@
 // b.isSubsetOf(['reset','merge','add','commit']) // true
 // 부분집합(subset)의 정의에 대한 자세한 정보는 여기를 참고하세요.
 
-// Advanced : 메소드가 문자열 이외의 자료형을 포함한 배열에도 작동하도록 개선해 보세요.
-
 Array.prototype.isSubsetOf = function (array) {
   for (let i = 0; i < this.length; i++)
     if (!array.includes(this[i])) {
       return false;
     }
   return true;
+};
+
+// Advanced : 메소드가 문자열 이외의 자료형을 포함한 배열에도 작동하도록 개선해 보세요.
+
+Array.prototype.isSubsetOf = function (array) {
+  // Your code here
+  /* START SOLUTION */
+
+  var arrayContains = function (array, item) {
+    for (var i = 0; i < array.length; i++) {
+      if (array[i] === item) return true;
+    }
+    return false;
+  };
+
+  for (var i = 0; i < this.length; i++) {
+    if (!arrayContains(array, this[i])) return false;
+  }
+  return true;
+  /* END SOLUTION */
 };
 
 let a = ['commit', 'push'];

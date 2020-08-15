@@ -6,12 +6,6 @@
 
 // 질문: 여러분이 작성한 알고리즘의 시간 복잡도는 어떻게 될까요? 아직 잘 모르겠다면, 구글링보다는 직관적으로 얼마나 걸릴지 고민해보세요.
 
-// Advanced:
-// 최적화 시간입니다! iteration 중 어떤 요소도 위치가 바뀌지(swap) 않았던 적이 있다면, 그 배열은 이미 잘 정렬 되었다고 볼 수 있지 않을까요? 함수 실행을 조금 더 일찍 마무리 할 수도 있었겠어요. 이렇게 최적화를 해봅시다. 최적화가 끝나고, 여러분이 작성한 알고리즘의 시간 복잡도는 어떻게 될까요?
-
-// Nightmare:
-// 1회 iteration에 모든 요소를 정말 다 검사 해야만 하나요? 검사하지 않아도 될 수 있습니다 :) 여러분이 직접 해보시죠! 다시 말씀드리지만, 최적화 후 시간 복잡도는 어떻게 바뀌었을까요?
-
 // 예:
 
 // bubbleSort([2, 1, 3]); // [1, 2, 3]을 반환해야 합니다.
@@ -35,6 +29,56 @@ const bubbleSort = function (array) {
     }
   }
   return array;
+};
+
+// Advanced:
+// 최적화 시간입니다! iteration 중 어떤 요소도 위치가 바뀌지(swap) 않았던 적이 있다면, 그 배열은 이미 잘 정렬 되었다고 볼 수 있지 않을까요? 함수 실행을 조금 더 일찍 마무리 할 수도 있었겠어요. 이렇게 최적화를 해봅시다. 최적화가 끝나고, 여러분이 작성한 알고리즘의 시간 복잡도는 어떻게 될까요?
+
+// Nightmare:
+// 1회 iteration에 모든 요소를 정말 다 검사 해야만 하나요? 검사하지 않아도 될 수 있습니다 :) 여러분이 직접 해보시죠! 다시 말씀드리지만, 최적화 후 시간 복잡도는 어떻게 바뀌었을까요?
+
+let i;
+
+// Feel free to add helper functions if needed.
+/* START SOLUTION */
+let swap = function (index1, index2, array) {
+  let temp = array[index1];
+  array[index1] = array[index2];
+  array[index2] = temp;
+  return array;
+};
+/* END SOLUTION */
+
+let bubbleSort = function (array) {
+  // Your code here.
+  /* START SOLUTION */
+  if (!Array.isArray(array)) {
+    throw new TypeError('bubbleSort accepts only arrays');
+  }
+
+  let len = array.length;
+
+  for (let i = 0; i < len; i++) {
+    let swaps = 0;
+
+    // Do j < len - 1 - i iterations so we don't consider the final (sorted)
+    // element in the array in future iterations
+    for (let j = 0; j < len - 1 - i; j++) {
+      if (array[j] > array[j + 1]) {
+        swaps++;
+        swap(j, j + 1, array);
+      }
+    }
+
+    // If no swaps were done during this iteration, then the array is sorted
+    // and we can bail out
+    if (!swaps) {
+      break;
+    }
+  }
+
+  return array;
+  /* END SOLUTION */
 };
 
 //insertion sort

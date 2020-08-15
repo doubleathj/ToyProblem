@@ -10,8 +10,6 @@
 
 // n이 4로 주어진다면, 작성한 함수는 3을 return해야 하고 5가 주어진다면 5를 return 해야 합니다.
 
-// Advanced : 재귀를 사용하지 않고 iterative하게 함수를 작성하세요. 참고 : https://techdifferences.com/difference-between-recursion-and-iteration-2.html
-
 // ex)
 
 // nthFibonacci(2); // => 1
@@ -25,4 +23,16 @@ const nthFibonacci = function (n) {
   return nthFibonacci(n - 2) + nthFibonacci(n - 1);
 };
 
-//
+// Advanced : 재귀를 사용하지 않고 iterative하게 함수를 작성하세요. 참고 : https://techdifferences.com/difference-between-recursion-and-iteration-2.html
+
+const nthFibonacci = function (n) {
+  // TODO: implement me!
+  /* START SOLUTION */
+  // fast solution
+  let fibs = [0, 1];
+  for (; n > 1; n--) {
+    fibs.push(fibs.shift() + fibs[0]);
+  }
+  return fibs[n];
+  /* END SOLUTION */
+};
