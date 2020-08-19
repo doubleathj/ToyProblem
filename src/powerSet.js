@@ -1,5 +1,3 @@
-'use strict';
-
 // powerSet
 // 주어진 문자열의 'power set'으로 이루어진 배열을 return하는 함수를 작성하세요.
 

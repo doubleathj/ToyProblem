@@ -1,5 +1,3 @@
-'use strict';
-
 // treeDFSelect
 // 주어진 Tree 클래스에 DFSelect 메소드를 구현하세요.
 

@@ -1,5 +1,3 @@
-'use strict';
-
 // commonCharacters
 // 두 개의 문자열을 매개변수로 받아 공통으로 가지고 있는 문자를 순서대로 return하는 함수를 작성하세요. (공백, 중복 제외)
 

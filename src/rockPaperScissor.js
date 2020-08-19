@@ -1,4 +1,3 @@
-'use strict';
 // rockPaperScissors
 // Basic
 // 세 판의 가위바위보를 할 동안 낼 수 있는 모든 경우의 수를 return하는 함수를 작성하세요.

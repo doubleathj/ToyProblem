@@ -1,5 +1,3 @@
-'use strict';
-
 // rotatedArraySearch
 // 정렬되어 있는 배열 중 일부를 왼쪽 혹은 오른쪽으로 회전시킨 배열이 주어졌을때, 어떻게 특정 element를 효율적으로 찾을 수 있을까요?
 
