@@ -36,25 +36,28 @@
 // 이 함수가 직사각형 매트릭스에서도 작동하도록 구현하세요. (NxN이 아닌 MxN)
 // // 이 함수가 두 번째 전달인자로 회전의 방향을 달리할 수 있도록 구현하세요. (1 = 시계 방향, -1 = 반시계 방향)
 
-const rotateMatrix = function (matrix, direction) {
-  // Your code here.
 
+const rotateMatrix = function(matrix, direction) {
+  
   direction = direction || 1;
-  var m = matrix.length,
-    n = matrix[0] && matrix[0].length;
-  var output = [];
-  // We iterate with i,j in output order to transparently support rectangular arrays
-  for (var i = 0; i < n; i++) {
+
+  let m = matrix.length;
+  let n = matrix[0] && matrix[0].length;
+  let output = [];
+
+  for(let i = 0; i < n; i++) {
     output[i] = [];
-    for (var j = 0; j < m; j++) {
+    for (let j = 0; j < m; j++) {
       if (direction > 0) {
-        // rotate clockwise
+        //시계방향 회전
         output[i][j] = matrix[m - j - 1][i];
       } else if (direction < 0) {
-        // rotate counterclockwise
+        //반시계 방향 회전
         output[i][j] = matrix[j][n - i - 1];
       }
     }
   }
   return output;
 };
+
+
