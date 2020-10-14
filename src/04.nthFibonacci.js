@@ -23,14 +23,27 @@ const nthFibonacci = function (n) {
 
 // Advanced : 재귀를 사용하지 않고 iterative하게 함수를 작성하세요. 참고 : https://techdifferences.com/difference-between-recursion-and-iteration-2.html
 
+// for 문 해결
 const nthFibonacci = function (n) {
   // TODO: implement me!
-  /* START SOLUTION */
-  // fast solution
-  let fibs = [0, 1];
-  for (; n > 1; n--) {
-    fibs.push(fibs.shift() + fibs[0]);
+  if (n <= 1) return n;
+  let sum = 0,
+    last = 1,
+    lastlast = 0;
+
+  for (let i = 1; i < n; i++) {
+    sum = lastlast + last;
+    lastlast = last;
+    last = sum;
   }
-  return fibs[n];
-  /* END SOLUTION */
+  return sum;
 };
+
+// 재귀 해결
+function getNthFibo(n) {
+  if (n <= 1) {
+    return n;
+  } else {
+    return getNthFibo(n - 1) + getNthFibo(n - 2);
+  }
+}
